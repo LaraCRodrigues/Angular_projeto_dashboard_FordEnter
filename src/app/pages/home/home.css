@@ -1,0 +1,11 @@
+p{
+    font-weight: 500;
+    font-size: 5rem;
+    background-color: blueviolet;
+}
+
+main{
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
