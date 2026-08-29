@@ -1,11 +1,10 @@
 import { Component } from '@angular/core';
 
 @Component({
-  selector: 'app-rodape',
   imports: [],
-  templateUrl: './rodape.html',
+  selector: 'app-rodape',
   styleUrl: './rodape.css',
+  templateUrl: './rodape.html',
 })
 export class Rodape {
-
 }
