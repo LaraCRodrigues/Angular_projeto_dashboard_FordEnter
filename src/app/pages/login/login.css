@@ -1,10 +1,343 @@
-main{
-    position: absolute;
-    transform: translate(-50%, -50%);
-    left: 50%;
-    top: 50%;
+* {
+  box-sizing: border-box;
 }
-p{
-    background-color: violet;
-    p
+
+/* =========================
+   CONTAINER PRINCIPAL
+========================= */
+.login-container {
+  position: relative;
+
+  width: 100%;
+  min-height: 100vh;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  overflow: hidden;
+
+  background-color: rgba(255, 255, 255, 0.15);
+}
+
+/* =========================
+Icone
+========================= */.input-icon {
+  position: relative;
+  width: 100%;
+}
+
+.input-icon i {
+  position: absolute;
+
+  left: 12px;
+  top: 50%;
+
+  transform: translateY(-50%);
+
+  color: #777;
+  font-size: 15px;
+
+  z-index: 1;
+}
+
+.input-icon:focus-within i {
+  color: #159447;
+}
+
+.input-icon input {
+  width: 100%;
+  height: 42px;
+padding-left: 55px;
+  padding: 10px 10px 10px 45px;
+
+  border: 1px solid #aaa;
+  border-radius: 5px;
+
+  font-size: 14px;
+}
+/* =========================
+   VÍDEO DE FUNDO
+========================= */
+
+.video-fundo {
+  position: absolute;
+
+  inset: 0;
+
+  width: 100%;
+  height: 100%;
+
+  overflow: hidden;
+
+  z-index: 0;
+}
+.video-overlay {
+  position: absolute;
+  inset: 0;
+
+  background-color: rgba(0, 0, 0, 0.20);
+
+  z-index: 1;
+}
+.video-fundo iframe {
+  position: absolute;
+
+  top: 50%;
+  left: 50%;
+
+  width: 100vw;
+  height: 100vh;
+
+  transform: translate(-50%, -50%);
+
+  border: none;
+
+  pointer-events: none;
+}
+
+
+/* =========================
+   CAMADA SOBRE O VÍDEO
+========================= */
+
+.video-overlay {
+  position: absolute;
+
+  inset: 0;
+
+  background: rgba(255, 255, 255, 0.15);
+
+  z-index: 1;
+}
+
+
+/* =========================
+   CONTAINER DO CARRO + FORM
+========================= */
+
+.login-card {
+  position: relative;
+
+  z-index: 2;
+
+  width: 90%;
+  max-width: 1100px;
+
+  min-height: 650px;
+
+  display: flex;
+  align-items: center;
+
+  padding: 50px;
+
+  /* Deixamos o container transparente */
+  background-color: #ffff;
+}
+
+
+/* =========================
+   IMAGEM DO CARRO
+========================= */
+
+.imagem-container {
+  width: 50%;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.imagem-container img {
+  width: 100%;
+  max-width: 550px;
+
+  object-fit: contain;
+}
+
+.video-fundo {
+  position: absolute;
+  inset: 0;
+
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+  object-position: center;
+
+  z-index: 0;
+
+  opacity: 0.75;
+}
+/* =========================
+   FORMULÁRIO
+========================= */
+.login-container-form {
+  width: 50%;
+  max-width: 450px;
+  padding: 35px;
+
+  background-color: rgba(255, 255, 255, 0.85);
+  border-radius: 15px;
+}
+
+.logo-ford {
+  width: 130px;
+  display: block;
+  margin: 0 auto 30px auto;
+}
+
+
+/* =========================
+   TÍTULO
+========================= */
+
+.login-container-form h1 {
+  color: #159447;
+
+  font-size: 28px;
+
+  margin-bottom: 30px;
+}
+
+
+/* =========================
+   FORM
+========================= */
+
+form {
+  width: 100%;
+}
+
+
+/* =========================
+   CAMPOS
+========================= */
+
+.campo {
+  width: 100%;
+
+  margin-bottom: 20px;
+}
+
+.campo label {
+  display: block;
+
+  margin-bottom: 6px;
+
+  color: #555;
+}
+
+.campo input {
+  width: 100%;
+  height: 42px;
+
+  padding: 10px;
+
+  border: 1px solid #aaa;
+
+  border-radius: 5px;
+
+  font-size: 14px;
+}
+
+.campo input:focus {
+  outline: none;
+
+  border-color: #159447;
+}
+
+
+/* =========================
+   CHECKBOX
+========================= */
+
+.lembrar {
+  display: flex;
+
+  justify-content: center;
+
+  margin: 20px 0;
+
+  color: #555;
+
+  font-size: 14px;
+}
+.campo {
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+.campo label {
+  display: block;
+  margin-bottom: 6px;
+  color: #555;
+}
+
+.input-icon {
+  position: relative;
+  width: 100%;
+}
+
+.input-icon i {
+  position: absolute;
+  left: 14px;
+  top: 50%;
+  transform: translateY(-50%);
+
+  color: #777;
+  font-size: 15px;
+
+  z-index: 2;
+}
+
+.input-icon input {
+  width: 100%;
+  height: 42px;
+
+  /* ESSE É O QUE MOVE O PLACEHOLDER */
+  padding: 10px 10px 10px 45px;
+
+  border: 1px solid #aaa;
+  border-radius: 5px;
+
+  font-size: 14px;
+}
+
+.input-icon input::placeholder {
+  color: #888;
+}
+
+.input-icon:focus-within i {
+  color: #159447;
+}
+
+.input-icon input:focus {
+  outline: none;
+  border-color: #159447;
+}
+
+/* =========================
+   BOTÃO
+========================= */
+
+button {
+  width: 100%;
+  height: 42px;
+
+  border: none;
+
+  border-radius: 5px;
+
+  background-color: #159447;
+
+  color: white;
+
+  font-size: 15px;
+
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #117638;
 }
