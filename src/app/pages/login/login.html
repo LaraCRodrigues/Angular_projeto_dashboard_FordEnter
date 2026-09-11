@@ -24,41 +24,49 @@
 
       <!-- <h1>Boas-vindas</h1> -->
 
-      <form>
+    <form (ngSubmit)="login()">
 
-        <div class="campo">
-          <label for="email">E-mail</label>
+  <div class="campo">
+    <label for="nome">Usuário</label>
 
-          <div class="input-icon">
-            <i class="fa-solid fa-envelope"></i>
+    <input
+      type="text"
+      id="nome"
+      name="nome"
+      [(ngModel)]="nome"
+      placeholder="Digite seu usuário"
+      required
+    >
+  </div>
 
-            <input type="email" id="email" placeholder="Insira seu e-mail">
-          </div>
-        </div>
 
-        <div class="campo">
-          <label for="senha">Senha</label>
+  <div class="campo">
+    <label for="senha">Senha</label>
 
-          <div class="input-icon">
-            <i class="fa-solid fa-lock"></i>
+    <input
+      type="password"
+      id="senha"
+      name="senha"
+      [(ngModel)]="senha"
+      placeholder="Digite sua senha"
+      required
+    >
+  </div>
 
-            <input type="password" id="senha" placeholder="Insira sua senha">
-          </div>
-        </div>
 
-        <div class="lembrar">
-          <label>
-            <input type="checkbox">
-            Logar automaticamente
-          </label>
-        </div>
+  <button
+    type="submit"
+    [disabled]="carregando"
+  >
+    {{ carregando ? 'Entrando...' : 'Entrar' }}
+  </button>
 
-        <button type="submit">
-          Entrar
-        </button>
 
-      </form>
+  <p class="mensagem-erro" *ngIf="mensagem">
+    {{ mensagem }}
+  </p>
 
+</form>
     </div>
 
   </div>

@@ -1,12 +1,18 @@
 import { Component } from '@angular/core';
-import { Veiculo } from '../../componentes/veiculo/veiculo';
+import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-home',
-  imports: [Veiculo],
+  standalone: true,
+  imports: [RouterLink],
   templateUrl: './home.html',
-  styleUrl: './home.css',
+  styleUrl: './home.css'
 })
 export class Home {
+
+  logout() {
+    localStorage.removeItem('usuario');
+    window.location.href = '/login';
+  }
 
 }

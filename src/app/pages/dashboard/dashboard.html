@@ -1,1 +1,197 @@
-<p>dashboard works!</p>
+<main class="dashboard-container">
+
+  <!-- MENU LATERAL -->
+  <aside class="menu-lateral">
+
+    <div class="logo-container">
+      <img src="http://localhost:3001/img/ford.png" alt="Ford">
+    </div>
+
+    <nav>
+
+      <a routerLink="/home" class="menu-item">
+        <span>⌂</span>
+        Home
+      </a>
+
+      <a routerLink="/dashboard" class="menu-item ativo">
+        <span>▣</span>
+        Dashboard
+      </a>
+
+    </nav>
+
+  </aside>
+
+
+  <!-- CONTEÚDO -->
+  <section class="conteudo-dashboard">
+
+    <!-- TOPO -->
+    <header class="topo-dashboard">
+
+      <button class="menu-mobile">
+        ☰
+      </button>
+
+      <h1>Dashboard FORD</h1>
+
+      <button class="btn-sair">
+        Sair
+      </button>
+
+    </header>
+
+
+    <!-- ÁREA DOS CARDS -->
+    <section class="area-superior">
+
+      <!-- SELETOR -->
+      <div class="seletor-container">
+
+        <label for="veiculo">
+          Veículo
+        </label>
+
+       <select
+  id="veiculo"
+  [(ngModel)]="nomeVeiculo"
+  (change)="mudarVeiculo()">
+
+  <option
+    *ngFor="let veiculo of veiculos"
+    [value]="veiculo.vehicle">
+
+    {{ veiculo.vehicle }}
+
+  </option>
+
+</select>
+
+      </div>
+
+
+      <!-- TOTAL DE VENDAS -->
+      <div class="card-dashboard">
+
+        <span class="card-titulo">
+          Total de Vendas
+        </span>
+
+        <strong>
+          {{ veiculoSelecionado?.volumetotal | number }}
+        </strong>
+
+        <small>
+          Unid.
+        </small>
+
+      </div>
+
+
+      <!-- CONECTADOS -->
+      <div class="card-dashboard">
+
+        <span class="card-titulo">
+          Conectados
+        </span>
+
+        <strong>
+          {{ veiculoSelecionado?.connected | number }}
+        </strong>
+
+        <small>
+          Unid.
+        </small>
+
+      </div>
+
+
+      <!-- UPDATE SOFTWARE -->
+      <div class="card-dashboard">
+
+        <span class="card-titulo">
+          Update Software
+        </span>
+
+        <strong>
+          {{ veiculoSelecionado?.softwareUpdates | number }}
+        </strong>
+
+        <small>
+          Unid.
+        </small>
+
+      </div>
+
+    </section>
+
+
+    <!-- VEÍCULO -->
+    <section class="veiculo-container">
+
+     <img
+  *ngIf="veiculoSelecionado"
+  [src]="veiculoSelecionado.img"
+  [alt]="veiculoSelecionado.vehicle"
+  class="imagem-veiculo">
+
+      <h2>
+        {{ veiculoSelecionado?.vehicle }}
+      </h2>
+
+    </section>
+
+
+    <!-- TABELA VIN -->
+    <section class="tabela-container">
+
+      <table>
+
+        <thead>
+
+          <tr>
+
+            <th>Código - VIN</th>
+
+            <th>Odômetro</th>
+
+            <th>Nível de Combustível</th>
+
+            <th>Status</th>
+
+            <th>Lat.</th>
+
+            <th>Long.</th>
+
+          </tr>
+
+        </thead>
+
+        <tbody>
+
+          <tr>
+
+            <td>2FRHDUYS2Y63NHD22454</td>
+
+            <td>23.344 Km</td>
+
+            <td>76%</td>
+
+            <td>ON</td>
+
+            <td>-12.2322</td>
+
+            <td>-35.2314</td>
+
+          </tr>
+
+        </tbody>
+
+      </table>
+
+    </section>
+
+  </section>
+
+</main>

@@ -1,11 +1,336 @@
-p{
-    font-weight: 500;
-    font-size: 5rem;
-    background-color: blueviolet;
+/* ================================
+   HOME
+================================ */
+
+.home-container {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  background: #f5f7fa;
+  font-family: Arial, Helvetica, sans-serif;
 }
 
-main{
-    display: flex;
-    justify-content: center;
-    gap: 10px;
+
+/* ================================
+   MENU LATERAL
+================================ */
+
+.menu-lateral {
+  width: 220px;
+  min-height: 100vh;
+  background: #ffffff;
+  border-right: 1px solid #e1e5e9;
+  box-shadow: 2px 0 10px rgba(0, 0, 0, 0.05);
+  position: fixed;
+  left: 0;
+  top: 0;
+  z-index: 10;
+}
+
+.logo-container {
+  width: 100%;
+  height: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-bottom: 1px solid #eeeeee;
+}
+
+.logo-container img {
+  width: 110px;
+  height: auto;
+}
+
+
+/* ================================
+   MENU
+================================ */
+
+.menu-lateral nav {
+  padding: 20px 12px;
+}
+
+.menu-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+
+  padding: 14px 18px;
+  margin-bottom: 8px;
+
+  color: #555;
+  text-decoration: none;
+  font-size: 15px;
+
+  border-radius: 8px;
+  transition: 0.2s ease;
+}
+
+.menu-item span {
+  font-size: 20px;
+}
+
+.menu-item:hover {
+  background: #f0f4f8;
+  color: #0066b3;
+}
+
+.menu-item.ativo {
+  background: #0066b3;
+  color: white;
+}
+
+
+/* ================================
+   CONTEÚDO
+================================ */
+
+.conteudo-home {
+  width: calc(100% - 220px);
+  margin-left: 220px;
+  min-height: 100vh;
+}
+
+
+/* ================================
+   TOPO
+================================ */
+
+.topo {
+  height: 80px;
+  background: white;
+  border-bottom: 1px solid #e4e7eb;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  padding: 0 35px;
+}
+
+.topo h1 {
+  margin: 0;
+  font-size: 24px;
+  font-weight: 600;
+  color: #0066b3;
+}
+
+.btn-sair {
+  border: none;
+  background: transparent;
+  color: #555;
+  font-size: 14px;
+  cursor: pointer;
+  padding: 10px 15px;
+  border-radius: 6px;
+}
+
+.btn-sair:hover {
+  background: #f0f0f0;
+  color: #0066b3;
+}
+
+
+/* ================================
+   ÁREA DE BOAS-VINDAS
+================================ */
+
+.boas-vindas {
+  min-height: calc(100vh - 80px);
+
+  position: relative;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  overflow: hidden;
+
+  background: #f5f7fa;
+}
+
+
+/* ================================
+   IMAGEM RANGER
+================================ */
+
+.imagem-ranger {
+  position: absolute;
+
+  width: min(850px, 75%);
+  height: auto;
+
+  /* right: 2%;
+  bottom: 8%; */
+
+  object-fit: contain;
+
+  opacity: 0.95;
+
+  z-index: 1;
+}
+
+
+/* ================================
+   CARD
+================================ */
+
+.card-boas-vindas {
+  position: relative;
+  z-index: 2;
+
+  width: 420px;
+
+  padding: 40px;
+
+  background: rgba(255, 255, 255, 0.88);
+
+  border: 1px solid rgba(255, 255, 255, 0.9);
+
+  border-radius: 12px;
+
+  box-shadow: 0 10px 35px rgba(0, 0, 0, 0.12);
+
+  backdrop-filter: blur(5px);
+}
+
+.subtitulo {
+  display: block;
+
+  margin-bottom: 15px;
+
+  color: #777;
+
+  font-size: 12px;
+  font-weight: bold;
+
+  letter-spacing: 1px;
+}
+
+.card-boas-vindas h2 {
+  margin: 0 0 15px;
+
+  color: #0066b3;
+
+  font-size: 28px;
+}
+
+.card-boas-vindas p {
+  margin: 0 0 25px;
+
+  color: #555;
+
+  line-height: 1.6;
+
+  font-size: 15px;
+}
+
+
+/* ================================
+   BOTÃO DASHBOARD
+================================ */
+
+.btn-dashboard {
+  border: none;
+
+  background: #0066b3;
+  color: white;
+
+  padding: 13px 24px;
+
+  border-radius: 6px;
+
+  font-size: 14px;
+  font-weight: bold;
+
+  cursor: pointer;
+
+  transition: 0.2s ease;
+}
+
+.btn-dashboard:hover {
+  background: #004f8c;
+  transform: translateY(-1px);
+}
+
+
+/* ================================
+   BOTÃO MOBILE
+================================ */
+
+.menu-mobile {
+  display: none;
+}
+
+
+/* ================================
+   RESPONSIVIDADE
+================================ */
+
+@media (max-width: 900px) {
+
+  .menu-lateral {
+    width: 180px;
+  }
+
+  .conteudo-home {
+    width: calc(100% - 180px);
+    margin-left: 180px;
+  }
+
+  .imagem-ranger {
+    width: 80%;
+    right: -10%;
+  }
+
+  .card-boas-vindas {
+    width: 360px;
+  }
+}
+
+
+@media (max-width: 650px) {
+
+  .menu-lateral {
+    display: none;
+  }
+
+  .conteudo-home {
+    width: 100%;
+    margin-left: 0;
+  }
+
+  .menu-mobile {
+    display: block;
+
+    border: none;
+    background: transparent;
+
+    font-size: 22px;
+    cursor: pointer;
+  }
+
+  .topo {
+    padding: 0 20px;
+  }
+
+  .topo h1 {
+    font-size: 18px;
+  }
+
+  .boas-vindas {
+    padding: 30px 20px;
+  }
+
+  .card-boas-vindas {
+    width: 100%;
+    padding: 30px;
+  }
+
+  .imagem-ranger {
+    width: 100%;
+    right: -20%;
+    bottom: 5%;
+    opacity: 0.35;
+  }
 }

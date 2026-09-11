@@ -1,6 +1,72 @@
+<main class="home-container">
 
-<main>
-<img src="calcifer.jpg" alt="foguinho">
-    <p>Castelo Animado</p>
+  <!-- Menu lateral -->
+  <aside class="menu-lateral">
+
+    <div class="logo-container">
+      <img src="/imagens/logo-ford-256.png" alt="Ford">
+    </div>
+
+    <nav>
+
+      <a routerLink="/home" class="menu-item ativo">
+        <span>⌂</span>
+        Home
+      </a>
+
+      <a routerLink="/dashboard" class="menu-item">
+        <span>▣</span>
+        Dashboard
+      </a>
+
+    </nav>
+
+  </aside>
+
+  <!-- Conteúdo principal -->
+  <section class="conteudo-home">
+
+    <header class="topo">
+
+      <button class="menu-mobile">
+        ☰
+      </button>
+
+      <h1>Sistema de Dados FORD</h1>
+
+    </header>
+
+    <!-- Área de boas-vindas -->
+    <div class="boas-vindas">
+
+      <div class="card-boas-vindas">
+
+        <span class="subtitulo">
+          SISTEMA DE DADOS FORD
+        </span>
+
+        <h2>Seja bem-vindo(a)!</h2>
+
+        <p>
+          Consulte informações dos veículos, vendas,
+          conectividade e atualizações de software.
+        </p>
+
+        <button
+          class="btn-dashboard"
+          routerLink="/dashboard">
+          Acessar Dashboard
+        </button>
+
+      </div>
+
+      <img
+        src="/imagens/ranger.png"
+        alt="Ford Ranger"
+        class="imagem-ranger">
+
+    </div>
+
+  </section>
+
 </main>
-
