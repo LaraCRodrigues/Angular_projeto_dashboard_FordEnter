@@ -287,7 +287,7 @@
     width: 360px;
   }
 }
-
+  /* RANGER NO CENTRO */
 @media (max-width: 650px) {
 
   /* BOTÃO HAMBÚRGUER */
@@ -340,16 +340,29 @@
     padding: 30px 20px;
   }
 
-  .card-boas-vindas {
-    width: 100%;
-    padding: 30px;
-  }
+.card-boas-vindas {
+  position: relative;
+  z-index: 2;
 
-  /* RANGER */
-  .imagem-ranger {
-    width: 100%;
-    right: -20%;
-    bottom: 5%;
-    opacity: 0.35;
-  }
+  width: 100%;
+  padding: 30px;
+}
+.imagem-ranger {
+  width: 110%;
+  height: auto;
+
+  position: absolute;
+
+  left: 50%;
+  top: 50%;
+
+  right: auto;
+  bottom: auto;
+
+  transform: translate(-50%, -50%);
+
+  opacity: 0.35;
+
+  z-index: 1;
+}
 }

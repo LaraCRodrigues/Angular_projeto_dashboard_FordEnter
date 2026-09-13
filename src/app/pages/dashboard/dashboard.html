@@ -1,7 +1,6 @@
 <main class="dashboard-container">
 
-  <!-- MENU LATERAL -->
-  <aside class="menu-lateral">
+  <aside class="menu-lateral" [class.aberto]="menuAberto">
 
     <div class="logo-container">
       <img src="http://localhost:3001/img/ford.png" alt="Ford">
@@ -9,12 +8,12 @@
 
     <nav>
 
-      <a routerLink="/home" class="menu-item">
+      <a routerLink="/home" class="menu-item" (click)="fecharMenu()">
         <span>⌂</span>
         Home
       </a>
 
-      <a routerLink="/dashboard" class="menu-item ativo">
+      <a routerLink="/dashboard" class="menu-item ativo" (click)="fecharMenu()">
         <span>▣</span>
         Dashboard
       </a>
@@ -23,55 +22,46 @@
 
   </aside>
 
-
-  <!-- CONTEÚDO -->
   <section class="conteudo-dashboard">
 
-    <!-- TOPO -->
+
     <header class="topo-dashboard">
 
-      <button class="menu-mobile">
+      <button class="menu-mobile" (click)="abrirMenu()">
         ☰
       </button>
 
       <h1>Dashboard FORD</h1>
 
-      <button class="btn-sair">
+      <button class="btn-sair" (click)="logout()">
         Sair
       </button>
 
     </header>
 
-
-    <!-- ÁREA DOS CARDS -->
     <section class="area-superior">
 
-      <!-- SELETOR -->
       <div class="seletor-container">
 
         <label for="veiculo">
           Veículo
         </label>
 
-       <select
-  id="veiculo"
-  [(ngModel)]="nomeVeiculo"
-  (change)="mudarVeiculo()">
+        <select id="veiculo" [(ngModel)]="nomeVeiculo" (change)="mudarVeiculo()">
 
-  <option
-    *ngFor="let veiculo of veiculos"
-    [value]="veiculo.vehicle">
+          <option value="" disabled>
+            Selecione o veículo
+          </option>
 
-    {{ veiculo.vehicle }}
+          <option *ngFor="let veiculo of veiculos" [value]="veiculo.vehicle">
+            {{ veiculo.vehicle }}
+          </option>
 
-  </option>
-
-</select>
+        </select>
 
       </div>
 
 
-      <!-- TOTAL DE VENDAS -->
       <div class="card-dashboard">
 
         <span class="card-titulo">
@@ -89,7 +79,6 @@
       </div>
 
 
-      <!-- CONECTADOS -->
       <div class="card-dashboard">
 
         <span class="card-titulo">
@@ -107,7 +96,6 @@
       </div>
 
 
-      <!-- UPDATE SOFTWARE -->
       <div class="card-dashboard">
 
         <span class="card-titulo">
@@ -127,14 +115,10 @@
     </section>
 
 
-    <!-- VEÍCULO -->
     <section class="veiculo-container">
 
-     <img
-  *ngIf="veiculoSelecionado"
-  [src]="veiculoSelecionado.img"
-  [alt]="veiculoSelecionado.vehicle"
-  class="imagem-veiculo">
+      <img *ngIf="veiculoSelecionado" [src]="veiculoSelecionado.img" [alt]="veiculoSelecionado.vehicle"
+        class="imagem-veiculo">
 
       <h2>
         {{ veiculoSelecionado?.vehicle }}
@@ -143,7 +127,6 @@
     </section>
 
 
-    <!-- TABELA VIN -->
     <section class="tabela-container">
 
       <table>

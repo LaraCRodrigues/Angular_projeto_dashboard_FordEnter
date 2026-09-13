@@ -1,54 +1,28 @@
-/* ================================
-   DASHBOARD
-================================ */
-
 .dashboard-container {
   width: 100%;
   min-height: 100vh;
-
   display: flex;
-
   background: #f5f7fa;
-
   font-family: Arial, Helvetica, sans-serif;
 }
-
-
-/* ================================
-   MENU LATERAL
-================================ */
 
 .menu-lateral {
   width: 220px;
   min-height: 100vh;
-
   background: #ffffff;
-
   border-right: 1px solid #e1e5e9;
-
   box-shadow: 2px 0 10px rgba(0, 0, 0, 0.05);
-
   position: fixed;
-
   left: 0;
   top: 0;
-
   z-index: 10;
 }
 
-
-/* ================================
-   LOGO
-================================ */
-
 .logo-container {
   height: 100px;
-
   display: flex;
-
   justify-content: center;
   align-items: center;
-
   border-bottom: 1px solid #eeeeee;
 }
 
@@ -57,34 +31,20 @@
   height: auto;
 }
 
-
-/* ================================
-   MENU
-================================ */
-
 .menu-lateral nav {
   padding: 20px 12px;
 }
 
 .menu-item {
   display: flex;
-
   align-items: center;
-
   gap: 12px;
-
   padding: 14px 18px;
-
   margin-bottom: 8px;
-
   color: #555;
-
   text-decoration: none;
-
   font-size: 15px;
-
   border-radius: 8px;
-
   transition: 0.2s ease;
 }
 
@@ -94,145 +54,85 @@
 
 .menu-item:hover {
   background: #f0f4f8;
-
   color: #0066b3;
 }
 
 .menu-item.ativo {
   background: #0066b3;
-
   color: white;
 }
 
-
-/* ================================
-   CONTEÚDO
-================================ */
-
 .conteudo-dashboard {
   width: calc(100% - 220px);
-
   margin-left: 220px;
-
   min-height: 100vh;
-
   padding-bottom: 40px;
 }
 
-
-/* ================================
-   TOPO
-================================ */
-
 .topo-dashboard {
   height: 80px;
-
   background: white;
-
   border-bottom: 1px solid #e4e7eb;
-
   display: flex;
-
   align-items: center;
-
   justify-content: space-between;
-
   padding: 0 35px;
 }
 
 .topo-dashboard h1 {
   margin: 0;
-
   font-size: 24px;
-
   font-weight: 600;
-
   color: #0066b3;
 }
 
 .btn-sair {
   border: none;
-
   background: transparent;
-
   color: #555;
-
   font-size: 14px;
-
   cursor: pointer;
-
   padding: 10px 15px;
-
   border-radius: 6px;
 }
 
 .btn-sair:hover {
   background: #f0f0f0;
-
   color: #0066b3;
 }
 
-
-/* ================================
-   ÁREA SUPERIOR
-================================ */
-
 .area-superior {
   display: grid;
-
   grid-template-columns: 180px repeat(3, 1fr);
-
   gap: 20px;
-
   padding: 30px 35px 10px;
 }
 
-
-/* ================================
-   SELETOR
-================================ */
-
 .seletor-container {
   background: white;
-
   border: 1px solid #dfe3e8;
-
   border-radius: 8px;
-
   padding: 18px;
-
   height: fit-content;
-
   box-shadow: 0 3px 10px rgba(0, 0, 0, 0.04);
 }
 
 .seletor-container label {
   display: block;
-
   margin-bottom: 10px;
-
   color: #555;
-
   font-size: 13px;
-
   font-weight: 600;
 }
 
 .seletor-container select {
   width: 100%;
-
   padding: 10px;
-
   border: 1px solid #cbd2d9;
-
   border-radius: 5px;
-
   background: white;
-
   color: #333;
-
   outline: none;
-
   cursor: pointer;
 }
 
@@ -240,83 +140,50 @@
   border-color: #0066b3;
 }
 
-
-/* ================================
-   CARDS
-================================ */
-
 .card-dashboard {
   background: white;
-
   border: 1px solid #dfe3e8;
-
   border-radius: 8px;
-
   padding: 20px;
-
   min-height: 95px;
-
   box-shadow: 0 3px 10px rgba(0, 0, 0, 0.04);
-
   display: flex;
-
   flex-direction: column;
-
   justify-content: center;
 }
 
 .card-titulo {
   color: #555;
-
   font-size: 13px;
-
   margin-bottom: 10px;
 }
 
 .card-dashboard strong {
   color: #0066b3;
-
   font-size: 24px;
-
   font-weight: 700;
 }
 
 .card-dashboard small {
   color: #888;
-
   font-size: 11px;
-
   margin-top: 3px;
 }
 
-
-/* ================================
-   VEÍCULO
-================================ */
-
 .veiculo-container {
   min-height: 300px;
-
   display: flex;
-
   flex-direction: column;
-
   justify-content: center;
-
   align-items: center;
-
   padding: 10px 35px;
-
   position: relative;
 }
 
 .imagem-veiculo {
   width: min(500px, 65%);
-
   max-height: 230px;
-
   object-fit: contain;
-
   transition: transform 0.3s ease;
 }
 
@@ -326,66 +193,38 @@
 
 .veiculo-container h2 {
   margin: 5px 0 0;
-
   color: #333;
-
   font-size: 18px;
-
   font-weight: 600;
 }
 
-
-/* ================================
-   TABELA
-================================ */
-
 .tabela-container {
   padding: 15px 35px 0;
-
   overflow-x: auto;
 }
 
 .tabela-container table {
   width: 100%;
-
   border-collapse: collapse;
-
   background: white;
-
   border-radius: 6px;
-
   overflow: hidden;
-
   box-shadow: 0 3px 10px rgba(0, 0, 0, 0.05);
 }
 
-
-/* CABEÇALHO */
-
 .tabela-container th {
   background: #0066b3;
-
   color: white;
-
   padding: 13px 12px;
-
   text-align: left;
-
   font-size: 12px;
-
   font-weight: 600;
 }
 
-
-/* LINHAS */
-
 .tabela-container td {
   padding: 13px 12px;
-
   border-bottom: 1px solid #e8ebee;
-
   color: #444;
-
   font-size: 12px;
 }
 
@@ -397,46 +236,23 @@
   border-bottom: none;
 }
 
-
-/* ================================
-   STATUS
-================================ */
-
 .tabela-container td:nth-child(4) {
   font-weight: bold;
-
   color: #188038;
 }
 
-
-/* ================================
-   BOTÃO MOBILE
-================================ */
-
 .menu-mobile {
   display: none;
-
   border: none;
-
   background: transparent;
-
   font-size: 22px;
-
   cursor: pointer;
 }
 
-
-/* ================================
-   RESPONSIVIDADE
-================================ */
-
 @media (max-width: 1100px) {
-
   .area-superior {
     grid-template-columns: 160px repeat(3, 1fr);
-
     gap: 12px;
-
     padding-left: 25px;
     padding-right: 25px;
   }
@@ -447,16 +263,13 @@
   }
 }
 
-
 @media (max-width: 850px) {
-
   .menu-lateral {
     width: 180px;
   }
 
   .conteudo-dashboard {
     width: calc(100% - 180px);
-
     margin-left: 180px;
   }
 
@@ -469,21 +282,37 @@
   }
 }
 
-
 @media (max-width: 650px) {
-
   .menu-lateral {
-    display: none;
+    display: block;
+    position: fixed;
+    left: -260px;
+    top: 0;
+    width: 260px;
+    height: 100vh;
+    z-index: 1000;
+    transition: left 0.3s ease;
+  }
+
+  .menu-lateral.aberto {
+    left: 0;
   }
 
   .conteudo-dashboard {
     width: 100%;
-
     margin-left: 0;
   }
 
   .menu-mobile {
     display: block;
+    position: relative;
+    z-index: 1001;
+    border: none;
+    background: transparent;
+    font-size: 28px;
+    cursor: pointer;
+    color: #0066b3;
+    padding: 5px;
   }
 
   .topo-dashboard {
@@ -496,7 +325,6 @@
 
   .area-superior {
     grid-template-columns: 1fr;
-
     padding: 20px;
   }
 
@@ -510,7 +338,6 @@
 
   .veiculo-container {
     min-height: 250px;
-
     padding: 10px 20px;
   }
 

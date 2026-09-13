@@ -21,7 +21,11 @@ export class Home {
   }
 
   logout(): void {
+  const confirmar = confirm('Tem certeza que deseja sair?');
+
+  if (confirmar) {
     localStorage.removeItem('usuario');
     window.location.href = '/login';
   }
+}
 }
