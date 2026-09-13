@@ -9,18 +9,23 @@
     <nav>
 
       <a routerLink="/home" class="menu-item" (click)="fecharMenu()">
+
         <span>⌂</span>
         Home
+
       </a>
 
       <a routerLink="/dashboard" class="menu-item ativo" (click)="fecharMenu()">
+
         <span>▣</span>
         Dashboard
+
       </a>
 
     </nav>
 
   </aside>
+
 
   <section class="conteudo-dashboard">
 
@@ -28,18 +33,24 @@
     <header class="topo-dashboard">
 
       <button class="menu-mobile" (click)="abrirMenu()">
+
         ☰
+
       </button>
 
       <h1>Dashboard FORD</h1>
 
       <button class="btn-sair" (click)="logout()">
+
         Sair
+
       </button>
 
     </header>
 
+
     <section class="area-superior">
+
 
       <div class="seletor-container">
 
@@ -50,11 +61,15 @@
         <select id="veiculo" [(ngModel)]="nomeVeiculo" (change)="mudarVeiculo()">
 
           <option value="" disabled>
+
             Selecione o veículo
+
           </option>
 
           <option *ngFor="let veiculo of veiculos" [value]="veiculo.vehicle">
+
             {{ veiculo.vehicle }}
+
           </option>
 
         </select>
@@ -112,6 +127,7 @@
 
       </div>
 
+
     </section>
 
 
@@ -129,6 +145,25 @@
 
     <section class="tabela-container">
 
+
+      <div class="busca-vin">
+
+        <label for="vin">
+          Buscar veículo por VIN
+        </label>
+
+        <div class="campo-vin">
+
+          <input id="vin" type="text" class="form-control" [(ngModel)]="vin" placeholder="Digite o código VIN">
+          <button type="button" class="btn btn-primary" (click)="buscarPorVin()">
+            Buscar
+          </button>
+
+        </div>
+
+      </div>
+
+
       <table>
 
         <thead>
@@ -136,44 +171,67 @@
           <tr>
 
             <th>Código - VIN</th>
-
             <th>Odômetro</th>
-
             <th>Nível de Combustível</th>
-
             <th>Status</th>
-
             <th>Lat.</th>
-
             <th>Long.</th>
 
           </tr>
 
         </thead>
 
+
         <tbody>
 
-          <tr>
 
-            <td>2FRHDUYS2Y63NHD22454</td>
+          <tr *ngIf="dadosVeiculo">
 
-            <td>23.344 Km</td>
+            <td>
+              {{ vin }}
+            </td>
 
-            <td>76%</td>
+            <td>
+              {{ dadosVeiculo.odometro | number }} Km
+            </td>
 
-            <td>ON</td>
+            <td>
+              {{ dadosVeiculo.nivelCombustivel }}%
+            </td>
 
-            <td>-12.2322</td>
+            <td>
+              {{ dadosVeiculo.status | uppercase }}
+            </td>
 
-            <td>-35.2314</td>
+            <td>
+              {{ dadosVeiculo.lat }}
+            </td>
+
+            <td>
+              {{ dadosVeiculo.long }}
+            </td>
 
           </tr>
+
+
+          <tr *ngIf="!dadosVeiculo">
+
+            <td colspan="6" class="sem-dados">
+
+              Digite um VIN para consultar os dados do veículo.
+
+            </td>
+
+          </tr>
+
 
         </tbody>
 
       </table>
 
+
     </section>
+
 
   </section>
 

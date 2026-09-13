@@ -1,343 +1,346 @@
-* {
-  box-sizing: border-box;
-}
-
-/* =========================
-   CONTAINER PRINCIPAL
-========================= */
 .login-container {
-  position: relative;
-
   width: 100%;
   min-height: 100vh;
-
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  overflow: hidden;
-
-  background-color: rgba(255, 255, 255, 0.15);
-}
-
-/* =========================
-Icone
-========================= */.input-icon {
   position: relative;
-  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  font-family: Arial, Helvetica, sans-serif;
 }
-
-.input-icon i {
-  position: absolute;
-
-  left: 12px;
-  top: 50%;
-
-  transform: translateY(-50%);
-
-  color: #777;
-  font-size: 15px;
-
-  z-index: 1;
-}
-
-.input-icon:focus-within i {
-  color: #159447;
-}
-
-.input-icon input {
-  width: 100%;
-  height: 42px;
-padding-left: 55px;
-  padding: 10px 10px 10px 45px;
-
-  border: 1px solid #aaa;
-  border-radius: 5px;
-
-  font-size: 14px;
-}
-/* =========================
-   VÍDEO DE FUNDO
-========================= */
 
 .video-fundo {
   position: absolute;
-
   inset: 0;
-
   width: 100%;
   height: 100%;
-
-  overflow: hidden;
-
   z-index: 0;
 }
+
+.video-fundo video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
 .video-overlay {
   position: absolute;
   inset: 0;
-
-  background-color: rgba(0, 0, 0, 0.20);
-
+  background: rgba(0, 0, 0, 0.45);
   z-index: 1;
-}
-.video-fundo iframe {
-  position: absolute;
-
-  top: 50%;
-  left: 50%;
-
-  width: 100vw;
-  height: 100vh;
-
-  transform: translate(-50%, -50%);
-
-  border: none;
-
   pointer-events: none;
 }
 
-
-/* =========================
-   CAMADA SOBRE O VÍDEO
-========================= */
-
-.video-overlay {
-  position: absolute;
-
-  inset: 0;
-
-  background: rgba(255, 255, 255, 0.15);
-
-  z-index: 1;
-}
-
-
-/* =========================
-   CONTAINER DO CARRO + FORM
-========================= */
-
 .login-card {
   position: relative;
-
   z-index: 2;
-
-  width: 90%;
-  max-width: 1100px;
-
-  min-height: 650px;
-
+  width: 850px;
+  max-width: 90%;
+  min-height: 500px;
   display: flex;
-  align-items: center;
-
-  padding: 50px;
-
-  /* Deixamos o container transparente */
-  background-color: #ffff;
+  background: rgba(255, 255, 255, 0.9);
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 15px 50px rgba(0, 0, 0, 0.25);
+  backdrop-filter: blur(5px);
+  transition: opacity 0.4s ease, transform 0.4s ease;
 }
 
-
-/* =========================
-   IMAGEM DO CARRO
-========================= */
+.login-card.oculto {
+  opacity: 0;
+  transform: scale(0.95);
+  pointer-events: none;
+}
 
 .imagem-container {
   width: 50%;
-
+  min-width: 50%;
   display: flex;
   justify-content: center;
   align-items: center;
+  background: rgba(245, 247, 250, 0.5);
+  overflow: hidden;
 }
 
 .imagem-container img {
   width: 100%;
-  max-width: 550px;
-
+  max-width: 500px;
+  height: auto;
   object-fit: contain;
 }
 
-.video-fundo {
-  position: absolute;
-  inset: 0;
-
-  width: 100%;
-  height: 100%;
-
-  object-fit: cover;
-  object-position: center;
-
-  z-index: 0;
-
-  opacity: 0.75;
-}
-/* =========================
-   FORMULÁRIO
-========================= */
 .login-container-form {
   width: 50%;
-  max-width: 450px;
-  padding: 35px;
-
-  background-color: rgba(255, 255, 255, 0.85);
-  border-radius: 15px;
+  min-width: 50%;
+  padding: 50px 45px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  box-sizing: border-box;
 }
 
 .logo-ford {
-  width: 130px;
   display: block;
-  margin: 0 auto 30px auto;
+  width: 120px;
+  height: auto;
+  margin: 0 auto 35px;
 }
-
-
-/* =========================
-   TÍTULO
-========================= */
-
-.login-container-form h1 {
-  color: #159447;
-
-  font-size: 28px;
-
-  margin-bottom: 30px;
-}
-
-
-/* =========================
-   FORM
-========================= */
-
-form {
-  width: 100%;
-}
-
-
-/* =========================
-   CAMPOS
-========================= */
 
 .campo {
   width: 100%;
-
   margin-bottom: 20px;
 }
 
 .campo label {
   display: block;
-
-  margin-bottom: 6px;
-
-  color: #555;
+  margin-bottom: 7px;
+  color: #444;
+  font-size: 14px;
+  font-weight: 600;
 }
 
 .campo input {
   width: 100%;
-  height: 42px;
-
-  padding: 10px;
-
-  border: 1px solid #aaa;
-
-  border-radius: 5px;
-
+  box-sizing: border-box;
+  padding: 13px 14px;
+  border: 1px solid #cbd2d9;
+  border-radius: 6px;
+  outline: none;
   font-size: 14px;
+  background: white;
+  color: #333;
 }
 
 .campo input:focus {
-  outline: none;
-
-  border-color: #159447;
+  border-color: #0066b3;
 }
 
-
-/* =========================
-   CHECKBOX
-========================= */
-
-.lembrar {
-  display: flex;
-
-  justify-content: center;
-
-  margin: 20px 0;
-
-  color: #555;
-
-  font-size: 14px;
-}
-.campo {
+.login-container-form button {
   width: 100%;
-  margin-bottom: 20px;
-}
-
-.campo label {
-  display: block;
-  margin-bottom: 6px;
-  color: #555;
-}
-
-.input-icon {
-  position: relative;
-  width: 100%;
-}
-
-.input-icon i {
-  position: absolute;
-  left: 14px;
-  top: 50%;
-  transform: translateY(-50%);
-
-  color: #777;
-  font-size: 15px;
-
-  z-index: 2;
-}
-
-.input-icon input {
-  width: 100%;
-  height: 42px;
-
-  /* ESSE É O QUE MOVE O PLACEHOLDER */
-  padding: 10px 10px 10px 45px;
-
-  border: 1px solid #aaa;
-  border-radius: 5px;
-
-  font-size: 14px;
-}
-
-.input-icon input::placeholder {
-  color: #888;
-}
-
-.input-icon:focus-within i {
-  color: #159447;
-}
-
-.input-icon input:focus {
-  outline: none;
-  border-color: #159447;
-}
-
-/* =========================
-   BOTÃO
-========================= */
-
-button {
-  width: 100%;
-  height: 42px;
-
+  padding: 13px;
+  margin-top: 5px;
   border: none;
-
-  border-radius: 5px;
-
-  background-color: #159447;
-
+  border-radius: 6px;
+  background: #0066b3;
   color: white;
-
   font-size: 15px;
-
+  font-weight: bold;
   cursor: pointer;
 }
 
-button:hover {
-  background-color: #117638;
+.mensagem-erro {
+  margin: 15px 0 0;
+  text-align: center;
+  color: #c62828;
+  font-size: 13px;
+}
+
+.btn-ocultar {
+  position: absolute;
+  right: 12px;
+  bottom: 12px;
+  width: 32px;
+  height: 32px;
+  border: none;
+  border-radius: 50%;
+  background: rgba(0, 102, 179, 0.9);
+  color: white;
+  font-size: 14px;
+  cursor: pointer;
+  z-index: 5;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: 0.2s ease;
+}
+
+.btn-ocultar:hover {
+  background: #004f8c;
+  transform: scale(1.08);
+}
+
+.btn-mostrar {
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
+  width: 42px;
+  height: 42px;
+  border: none;
+  border-radius: 50%;
+  background: rgba(0, 102, 179, 0.9);
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(10px);
+  transition: 0.3s ease;
+}
+
+.btn-mostrar.visivel {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translateY(0);
+}
+
+.btn-mostrar:hover {
+  background: #004f8c;
+  transform: scale(1.08);
+}
+.btn-som {
+  position: fixed;
+  right: 20px;
+  top: 20px;
+  width: 42px;
+  height: 42px;
+  border: none;
+  border-radius: 50%;
+  background: rgba(0, 102, 179, 0.9);
+  color: white;
+  font-size: 18px;
+  cursor: pointer;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: 0.2s ease;
+}
+
+.btn-som:hover {
+  background: #004f8c;
+  transform: scale(1.08);
+}
+@media (max-width: 900px) {
+  .login-card {
+    width: 90%;
+    min-height: 450px;
+  }
+
+  .login-container-form {
+    padding: 40px 35px;
+  }
+
+  .imagem-container img {
+    width: 95%;
+  }
+
+  .logo-ford {
+    width: 110px;
+    margin-bottom: 30px;
+  }
+}
+
+@media (max-width: 700px) {
+  .login-card {
+    width: 90%;
+    min-height: auto;
+    flex-direction: column;
+  }
+
+  .imagem-container {
+    width: 100%;
+    min-width: 100%;
+    height: 220px;
+    min-height: 220px;
+  }
+
+  .imagem-container img {
+    width: 350px;
+    max-width: 85%;
+  }
+
+  .login-container-form {
+    width: 100%;
+    min-width: 100%;
+    padding: 35px 40px 40px;
+  }
+
+  .logo-ford {
+    width: 100px;
+    margin-bottom: 25px;
+  }
+}
+
+@media (max-width: 500px) {
+  .login-container {
+    min-height: 100vh;
+    padding: 20px 15px;
+    box-sizing: border-box;
+  }
+
+  .login-card {
+    width: 100%;
+    max-width: 400px;
+    border-radius: 12px;
+  }
+
+  .imagem-container {
+    height: 180px;
+    min-height: 180px;
+  }
+
+  .imagem-container img {
+    width: 300px;
+    max-width: 90%;
+  }
+
+  .login-container-form {
+    padding: 30px 25px 35px;
+  }
+
+  .logo-ford {
+    width: 95px;
+    margin-bottom: 25px;
+  }
+
+  .campo {
+    margin-bottom: 17px;
+  }
+
+  .campo label {
+    font-size: 13px;
+  }
+
+  .campo input {
+    padding: 12px;
+    font-size: 14px;
+  }
+
+  .login-container-form button {
+    padding: 13px;
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 380px) {
+  .login-container {
+    padding: 15px 10px;
+  }
+
+  .imagem-container {
+    height: 150px;
+    min-height: 150px;
+  }
+
+  .imagem-container img {
+    width: 250px;
+  }
+
+  .login-container-form {
+    padding: 25px 20px 30px;
+  }
+
+  .logo-ford {
+    width: 85px;
+    margin-bottom: 20px;
+  }
+
+  .campo input {
+    padding: 11px;
+  }
 }

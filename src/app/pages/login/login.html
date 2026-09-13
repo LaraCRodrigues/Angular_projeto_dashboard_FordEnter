@@ -1,18 +1,27 @@
 <div class="login-container">
 
-  <!-- VÍDEO DE FUNDO -->
   <div class="video-fundo">
-    <iframe
-      src="https://www.youtube.com/embed/TRrxlWzoySA?autoplay=1&mute=1&loop=1&playlist=TRrxlWzoySA&controls=0&rel=0"
-      frameborder="0" allow="autoplay; fullscreen" allowfullscreen>
-    </iframe>
+   <video
+  #videoFundo
+  autoplay
+  muted
+  loop
+  playsinline>
+  <source src="/videos/YTDown.com_YouTube_E-PARA-ISTO-QUE-ESTAMOS-AQUI_Media_OwmsRM4zSUs_001_1080p.mp4" type="video/mp4">
+</video>
+
+<button
+  type="button"
+  class="btn-som"
+  (click)="alternarSom(videoFundo)"
+  [title]="videoFundo.muted ? 'Ativar som' : 'Desativar som'">
+  {{ videoFundo.muted ? '🔇' : '🔊' }}
+</button>
   </div>
 
-  <!-- CAMADA TRANSPARENTE -->
   <div class="video-overlay"></div>
 
-  <!-- CONTAINER PRINCIPAL -->
-  <div class="login-card">
+  <div class="login-card" [class.oculto]="cardOculto">
 
     <div class="imagem-container">
       <img src="/imagens/ranger.png" alt="Ford Ranger">
@@ -20,55 +29,68 @@
 
     <div class="login-container-form">
 
-      <img class="logo-ford" src="/imagens/logo-ford-256.png" alt="Ford">
+      <img
+        class="logo-ford"
+        src="/imagens/logo-ford-256.png"
+        alt="Ford">
 
-      <!-- <h1>Boas-vindas</h1> -->
+      <form (ngSubmit)="login()">
 
-    <form (ngSubmit)="login()">
+        <div class="campo">
+          <label for="nome">Usuário</label>
 
-  <div class="campo">
-    <label for="nome">Usuário</label>
+          <input
+            type="text"
+            id="nome"
+            name="nome"
+            [(ngModel)]="nome"
+            placeholder="Digite seu usuário"
+            required>
+        </div>
 
-    <input
-      type="text"
-      id="nome"
-      name="nome"
-      [(ngModel)]="nome"
-      placeholder="Digite seu usuário"
-      required
-    >
-  </div>
+        <div class="campo">
+          <label for="senha">Senha</label>
 
+          <input
+            type="password"
+            id="senha"
+            name="senha"
+            [(ngModel)]="senha"
+            placeholder="Digite sua senha"
+            required>
+        </div>
 
-  <div class="campo">
-    <label for="senha">Senha</label>
+        <button
+          type="submit"
+          [disabled]="carregando">
+          {{ carregando ? 'Entrando...' : 'Entrar' }}
+        </button>
 
-    <input
-      type="password"
-      id="senha"
-      name="senha"
-      [(ngModel)]="senha"
-      placeholder="Digite sua senha"
-      required
-    >
-  </div>
+        <p class="mensagem-erro" *ngIf="mensagem">
+          {{ mensagem }}
+        </p>
 
+      </form>
 
-  <button
-    type="submit"
-    [disabled]="carregando"
-  >
-    {{ carregando ? 'Entrando...' : 'Entrar' }}
-  </button>
-
-
-  <p class="mensagem-erro" *ngIf="mensagem">
-    {{ mensagem }}
-  </p>
-
-</form>
     </div>
 
+    <button
+      type="button"
+      class="btn-ocultar"
+      (click)="ocultarCard()"
+      title="Ocultar login">
+      ◀
+    </button>
+
   </div>
+
+  <button
+    type="button"
+    class="btn-mostrar"
+    [class.visivel]="cardOculto"
+    (click)="mostrarCard()"
+    title="Mostrar login">
+    ▶
+  </button>
 
 </div>

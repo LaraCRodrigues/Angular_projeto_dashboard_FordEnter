@@ -281,7 +281,78 @@
     grid-column: 1 / -1;
   }
 }
+/* =========================
+   BUSCA POR VIN
+========================= */
 
+.busca-vin {
+  background: white;
+  padding: 20px;
+  margin-bottom: 15px;
+  border-radius: 8px;
+  border: 1px solid #dfe3e8;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.04);
+}
+
+.busca-vin label {
+  display: block;
+  margin-bottom: 10px;
+  color: #555;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.campo-vin {
+  display: flex;
+  gap: 10px;
+}
+
+.campo-vin input {
+  flex: 1;
+  padding: 11px 12px;
+  border: 1px solid #cbd2d9;
+  border-radius: 5px;
+  outline: none;
+  font-size: 14px;
+  color: #333;
+  background: white;
+}
+
+.campo-vin input:focus {
+  border-color: #0066b3;
+  box-shadow: 0 0 0 2px rgba(0, 102, 179, 0.08);
+}
+
+.campo-vin input::placeholder {
+  color: #999;
+}
+
+.campo-vin button {
+  border: none;
+  background: #0066b3;
+  color: white;
+  padding: 0 22px;
+  border-radius: 5px;
+  font-size: 14px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+
+.campo-vin button:hover {
+  background: #004f8c;
+  transform: translateY(-1px);
+}
+
+.campo-vin button:active {
+  transform: translateY(0);
+}
+
+.sem-dados {
+  text-align: center;
+  color: #777;
+  padding: 25px !important;
+}
 @media (max-width: 650px) {
   .menu-lateral {
     display: block;
@@ -344,4 +415,22 @@
   .imagem-veiculo {
     width: 90%;
   }
+
+  .busca-vin {
+  padding: 15px;
+}
+
+.campo-vin {
+  flex-direction: column;
+}
+
+.campo-vin input {
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.campo-vin button {
+  width: 100%;
+  min-height: 42px;
+}
 }
