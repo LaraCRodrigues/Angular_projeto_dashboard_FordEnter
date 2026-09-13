@@ -1,14 +1,13 @@
 <main class="home-container">
 
   <!-- Menu lateral -->
-  <aside class="menu-lateral">
+  <aside class="menu-lateral" [class.aberto]="menuAberto">
 
     <div class="logo-container">
       <img src="/imagens/logo-ford-256.png" alt="Ford">
     </div>
 
     <nav>
-
       <a routerLink="/home" class="menu-item ativo">
         <span>⌂</span>
         Home
@@ -18,7 +17,6 @@
         <span>▣</span>
         Dashboard
       </a>
-
     </nav>
 
   </aside>
@@ -27,10 +25,7 @@
   <section class="conteudo-home">
 
     <header class="topo">
-
-      <button class="menu-mobile">
-        ☰
-      </button>
+      <button class="menu-mobile" (click)="abrirMenu()">☰</button>
 
       <h1>Sistema de Dados FORD</h1>
 
@@ -52,18 +47,13 @@
           conectividade e atualizações de software.
         </p>
 
-        <button
-          class="btn-dashboard"
-          routerLink="/dashboard">
+        <button class="btn-dashboard" routerLink="/dashboard">
           Acessar Dashboard
         </button>
 
       </div>
 
-      <img
-        src="/imagens/ranger.png"
-        alt="Ford Ranger"
-        class="imagem-ranger">
+      <img src="/imagens/ranger.png" alt="Ford Ranger" class="imagem-ranger">
 
     </div>
 

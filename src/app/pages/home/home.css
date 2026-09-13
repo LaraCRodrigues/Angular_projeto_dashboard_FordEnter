@@ -288,28 +288,45 @@
   }
 }
 
-
 @media (max-width: 650px) {
 
-  .menu-lateral {
-    display: none;
+  /* BOTÃO HAMBÚRGUER */
+  .menu-mobile {
+    display: block;
+    position: relative;
+    z-index: 1001;
+    border: none;
+    background: transparent;
+    font-size: 28px;
+    cursor: pointer;
+    color: #0066b3;
+    padding: 5px;
   }
 
+  /* MENU LATERAL FECHADO */
+  .menu-lateral {
+    display: block;
+    position: fixed;
+    left: -260px;
+    top: 0;
+    width: 260px;
+    height: 100vh;
+    z-index: 1000;
+    transition: left 0.3s ease;
+  }
+
+  /* MENU LATERAL ABERTO */
+  .menu-lateral.aberto {
+    left: 0;
+  }
+
+  /* CONTEÚDO OCUPA TODA A TELA */
   .conteudo-home {
     width: 100%;
     margin-left: 0;
   }
 
-  .menu-mobile {
-    display: block;
-
-    border: none;
-    background: transparent;
-
-    font-size: 22px;
-    cursor: pointer;
-  }
-
+  /* TOPO */
   .topo {
     padding: 0 20px;
   }
@@ -318,6 +335,7 @@
     font-size: 18px;
   }
 
+  /* BOAS-VINDAS */
   .boas-vindas {
     padding: 30px 20px;
   }
@@ -327,6 +345,7 @@
     padding: 30px;
   }
 
+  /* RANGER */
   .imagem-ranger {
     width: 100%;
     right: -20%;

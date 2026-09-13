@@ -10,9 +10,18 @@ import { RouterLink } from '@angular/router';
 })
 export class Home {
 
-  logout() {
+  menuAberto: boolean = false;
+
+  abrirMenu(): void {
+    this.menuAberto = !this.menuAberto;
+  }
+
+  fecharMenu(): void {
+    this.menuAberto = false;
+  }
+
+  logout(): void {
     localStorage.removeItem('usuario');
     window.location.href = '/login';
   }
-
 }
